@@ -17,10 +17,16 @@
 
 -(NSString *)lowerCaseAll: (NSString *)userString;
 
--(NSNumber *)numberize: (NSString *) userString;
+-(void)numberize: (NSString *) userString;
 
--(NSString *)Canadianize: (NSString *)userString;
+-(NSString *)canadianize: (NSString *)userString;
 
 -(void)respond : (NSString *)userSting;
+
+-(NSString *)replaceSpace: (NSString *)userString;
+
+-(void)wordCount:(NSString *)userString;
+
+-(void)punctuationRemoval: (NSString *)userString;
 
 @end

@@ -22,30 +22,51 @@
     return currentString;
 }
 
-//-(NSNumber *)numberize: (NSString *) userString{
-//    
-//    
-//    
-//}
--(NSString *)Canadianize: (NSString *)userString{
+-(void)numberize: (NSString *) userString{
+    NSUInteger stringLength = [userString length];
+   // userString = userMutableString;
+    for (int i = 0 ; i < stringLength; i++) {
+        int asccicode = [userString characterAtIndex:i];
+        [userString stringByAppendingFormat:@"%d",asccicode];
+        NSLog(@"%i",asccicode);
+        }
+  }
+-(NSString *)canadianize: (NSString *)userString{
     NSString *currentString = [userString stringByAppendingString:@", eh?"];
     return currentString;
 }
 
--(void)respond : (NSString *)userString{
-    NSUInteger index = [userString length] - 1;
-    
-   NSString *lastCharacter = [userString stringAtIndex: index];
-    
-    if ([lastCharacter isEqualToString:@"?"]) {
+-(void)respond :(NSString *)userString{
+  
+    if ([userString hasSuffix:@"?\n"]) {
         NSLog(@" I dont know");
     }
-    else if ([lastCharacter isEqualToString:@"!"]){
+    
+    else if ([userString hasSuffix:@"!\n"]){
         NSLog(@" Whoa, Calm down!");
     }
     
-    }
+}
 
+-(NSString *)replaceSpace: (NSString *)userString{
+    
+    NSString *currentString = [userString stringByReplacingOccurrencesOfString:@" " withString:@"-"];
+    
+    return currentString;
+
+}
+
+-(void)wordCount:(NSString *)userString{
+    
+   // NSUInteger stringLength = [userString length];
+    
+    NSArray *stringArrays = [userString componentsSeparatedByString:@" "];
+    
+    NSUInteger countOfWords = [stringArrays count];
+    
+    NSLog(@"%lu",(unsigned long)countOfWords);
+    
+}
 
 
 @end

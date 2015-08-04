@@ -16,35 +16,68 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
         while (true) {
-            NSLog(@"Please tell us which operation would you like to do?");
-            int userNumber;
-            NSLog(@" press 1 for upper case, press 2 for lower case, press 3 for numberize, press 4 for canadianze, press 5 for respond, press 6 for De-space it");
+            //take usuer input
             
+            //save input to varible
+            NSLog(@"Please tell us which operation would you like to do?");
+            char userNumber[255];
+            NSLog(@" press 1 for upper case \n press 2 for lower case\n  press 3 for numberize\n press 4 for canadianze\n press 5 for respond\n press 6 for De-space it\n press 7 for word count");
+            fgets(userNumber, 255, stdin);
+    
+            
+            NSString *userNumberString = [NSString stringWithUTF8String:userNumber];
+            
+            NSInteger userNumberInt = [userNumberString integerValue];
             
             
             char inputChars[255];
             NSLog(@"Input as string:");
             fgets(inputChars, 255, stdin);
-            
-            NSLog(@"Your string is %s\n",inputChars);
+           // scanf("%[^\n]s",inputChars);
             
             NSString *inputString = [NSString stringWithUTF8String:inputChars];
             
-            //  NSLog(@"Input was %@", inputString);
+            NSString *trimmedString = [inputString stringByTrimmingCharactersInSet:
+                                       [NSCharacterSet whitespaceCharacterSet]];
+    
             
             StringOperations *string = [[StringOperations alloc]init];
-            NSString *upperCase = [string upperCaseAll:inputString];
-            NSLog(@"%@", upperCase);
-            NSString *lowerCase = [string lowerCaseAll:inputString];
-            NSLog(@"%@",lowerCase);
-            NSString *candanize = [string Canadianize:inputString];
-            NSLog(@"%@",candanize);
             
-        }
-   
-        
+            if (userNumberInt == 1) {
+              
+                NSString *upperCase = [string upperCaseAll:inputString];
+                NSLog(@"%@", upperCase);
+                }
+            
+            else if (userNumberInt == 2){
+                NSString *lowerCase = [string lowerCaseAll:inputString];
+                NSLog(@"%@",lowerCase);
+                }
+            else if (userNumberInt == 3){
+                [string numberize:inputString];
+            }
+            
+            else if (userNumberInt == 4){
+           
+            NSString *canadanize = [string canadianize:inputString];
+            NSLog(@"%@",canadanize);
+            
+            }
+            
+            else if (userNumberInt == 5){
+                [string respond:trimmedString];
+                }
+            
+            else if (userNumberInt == 6){
+                NSString *deSpace = [string replaceSpace:inputString];
+                NSLog(@"%@",deSpace);
+            }
+            else if (userNumberInt == 7){
+                [string wordCount:inputString];
+            }
+            
     }
     return 0;
 }
 
-
+}
