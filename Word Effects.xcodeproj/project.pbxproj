@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B64C91881B713E2E00AD96BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B64C91871B713E2E00AD96BC /* main.m */; };
+		B64C91901B71410200AD96BC /* StringOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = B64C918F1B71410200AD96BC /* StringOperations.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		B64C91841B713E2E00AD96BC /* Word Effects */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Word Effects"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B64C91871B713E2E00AD96BC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B64C918E1B71410200AD96BC /* StringOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StringOperations.h; path = ../StringOperations.h; sourceTree = "<group>"; };
+		B64C918F1B71410200AD96BC /* StringOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StringOperations.m; path = ../StringOperations.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +60,8 @@
 		B64C91861B713E2E00AD96BC /* Word Effects */ = {
 			isa = PBXGroup;
 			children = (
+				B64C918E1B71410200AD96BC /* StringOperations.h */,
+				B64C918F1B71410200AD96BC /* StringOperations.m */,
 				B64C91871B713E2E00AD96BC /* main.m */,
 			);
 			path = "Word Effects";
@@ -118,6 +123,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B64C91901B71410200AD96BC /* StringOperations.m in Sources */,
 				B64C91881B713E2E00AD96BC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
