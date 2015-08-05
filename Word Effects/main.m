@@ -21,7 +21,7 @@ int main(int argc, const char * argv[]) {
             //save input to varible
             NSLog(@"Please tell us which operation would you like to do?");
             char userNumber[255];
-            NSLog(@" press 1 for upper case \n press 2 for lower case\n  press 3 for numberize\n press 4 for canadianze\n press 5 for respond\n press 6 for De-space it\n press 7 for word count");
+            NSLog(@" press 1 for upper case \n press 2 for lower case\n  press 3 for numberize\n press 4 for canadianze\n press 5 for respond\n press 6 for De-space it\n press 7 for word count\n 8 for punctuation removal");
             fgets(userNumber, 255, stdin);
     
             
@@ -74,6 +74,9 @@ int main(int argc, const char * argv[]) {
             }
             else if (userNumberInt == 7){
                 [string wordCount:inputString];
+            }
+            else if (userNumberInt == 8){
+                [string punctuationRemoval:inputString];
             }
             
     }

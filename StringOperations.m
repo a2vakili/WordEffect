@@ -68,5 +68,18 @@
     
 }
 
+-(void)punctuationRemoval: (NSString *)userString{
+    
+    NSArray *stringArrays = [userString componentsSeparatedByString:@""];
+    
+    NSString *lastString = [stringArrays lastObject];
+    
+    if ([lastString isEqualToString: @"!"] || [lastString isEqualToString: @"?"] || [lastString isEqualToString:@"."]) {
+        lastString = @"";
+    }
+    
+    
+}
+
 
 @end
